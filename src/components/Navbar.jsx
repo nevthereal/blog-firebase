@@ -9,7 +9,7 @@ const Navbar = ({ auth }) => {
   return (
     <div className='w-full bg-slate-700 text-white flex justify-between p-4 text-lg'>
         <a href="/"><FontAwesomeIcon icon={faHome} className='text-4xl my-auto' /></a>
-        <div className='my-auto font-bold flex gap-2'>
+        <div className='text-xl my-auto font-extrabold flex gap-2'>
           <a href="/create">Create</a>
           <a href="/account">Account</a>
         </div>
