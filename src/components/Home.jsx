@@ -7,17 +7,17 @@ const Home = ({ auth }) => {
   const [user, loading] = useAuthState(auth)
 
   const hour = timestamp('HH')
-  let greeting;
+  let dayTime;
 
   if(hour < 12) {
-    greeting = "Morning"
+    dayTime = "Morning"
   } else {
-    greeting = "Evening"
+    dayTime = "Evening"
   }
 
   return (
     <div className='m-10'>
-      {user ? <h2 className='font-bold text-slate-900 text-4xl'>Good <span>{greeting}</span>, {user.displayName}</h2> : loading? <></> : <></>}
+      {user ? <h2 className='font-bold text-slate-900 text-4xl'>Good {dayTime}, {user.displayName}</h2> : loading? <></> : <></>}
       <div>
         Blabla
       </div>
