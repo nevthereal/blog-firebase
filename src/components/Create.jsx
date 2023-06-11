@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
+import { db } from '../firebase'
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
+import { useNavigate } from 'react-router-dom'
 
 const style = {
     heading: `text-2xl font-bold`,
@@ -12,6 +15,22 @@ const style = {
 const Create = ({ auth }) => {
   const [user, loading] = useAuthState(auth)
 
+  const [title, setTitle] = useState('')
+  const [content, setContent] = useState('')
+
+  let navigate = useNavigate()
+
+  const createPost = async (e) => {
+    e.preventDefault(e)
+    await addDoc(collection(db, 'posts'), {
+      title,
+      content,
+      author: user.displayName,
+      pfp: user.photoURL,
+      time: serverTimestamp()
+    })
+    navigate("/")
+  }
 
   return (
     <div className='p-4 flex justify-center'>
@@ -20,9 +39,9 @@ const Create = ({ auth }) => {
         <h1 className={style.heading}>Create Post:</h1>
         <form onSubmit={createPost}>
           <p className={style.subHeading}>Title:</p>
-          <input type="text" className={style.input} />
+          <input required type="text" className={style.input} onChange={(e) => {setTitle(e.target.value)}} />
           <p className={style.subHeading}>Post:</p>
-          <textarea className={style.tA} rows={20} cols={80} />
+          <textarea required className={style.tA} rows={20} cols={80} onChange={(e) => {setContent(e.target.value)}} />
           <button className={style.button}>Post!</button>
         </form>
       </div>}
