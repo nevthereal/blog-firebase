@@ -26,6 +26,7 @@ const Create = ({ auth }) => {
       title,
       content,
       author: user.displayName,
+      pfp: user.photoURL,
       time: serverTimestamp()
     })
     navigate("/")
