@@ -6,7 +6,7 @@ const Create = ({ auth }) => {
 
   return (
     <div className='p-4'>
-      {loading ? <div className='italic'>Checking if user is logged in ...</div> : !user ? <div>Please <a href="/account" className='font-bold'>log in</a> to create a post</div> : 
+      {loading ? <div className='italic'>Fetching user data ...</div> : !user ? <div>Please <a href="/account" className='font-bold'>log in</a> to create a post</div> : 
       <div>
         <p>Create Post:</p>
       </div>}

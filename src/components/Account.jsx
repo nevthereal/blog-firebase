@@ -16,10 +16,9 @@ const Account = ({ auth, handleSignIn, handleSignOut }) => {
 
   return (
     <div className='text-center p-4'>
-      
       {loading ? 
       <div>
-        <p className='italic'>Loading user data ...</p>
+        <p className='italic'>Fetching user data ...</p>
       </div>
       : user ?
       <div>
@@ -35,7 +34,6 @@ const Account = ({ auth, handleSignIn, handleSignOut }) => {
         <button onClick={handleSignIn} className={style.button}>Sign in with <FontAwesomeIcon icon={faGoogle} /></button>
       </div>
       }
-      
     </div>
   )
 }
