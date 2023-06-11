@@ -25,7 +25,7 @@ function App() {
     <>
       <Navbar auth={auth}/>
       <Routes>
-        <Route index element={<Home />} />
+        <Route index element={<Home auth={auth} />} />
         <Route path="/account" element={<Account auth={auth} handleSignIn={handleSignIn} handleSignOut={handleSignOut} />} />
         <Route path="/create" element={<Create auth={auth} />} />
       </Routes>
