@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import timestamp from 'time-stamp'
 import Post from './Post'
-import { query, collection, onSnapshot, orderBy, serverTimestamp } from 'firebase/firestore'
+import { query, collection, onSnapshot, orderBy } from 'firebase/firestore'
 import { db } from '../firebase'
 
 const Home = ({ auth }) => {
@@ -37,7 +37,7 @@ const Home = ({ auth }) => {
       <p className='font-bold text-2xl pt-2 pb-4 text-slate-800'>Here are the latest posts:</p>
           {postList.map((post, index) => {
             return (
-              <Post key={index} title={post.title} pfp={post.pfp} author={post.author} content={post.content} />
+            <Post key={index} title={post.title} pfp={post.pfp} author={post.author} content={post.content} time={post.time.toDate().toLocaleString()} />
             )
           })}
     </div>
