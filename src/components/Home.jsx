@@ -33,7 +33,7 @@ const Home = ({ auth }) => {
   }, [])
   return (
     <div className='m-10'>
-      {user ? <h1 className='font-bold text-slate-900 text-5xl'>Good {dayTime}, {user.displayName}</h1> : loading? <></> : <></>}
+      <h1 className='font-bold text-slate-900 text-5xl'>Good {dayTime}{loading ? <></> : user ? <span>, {user.displayName}</span>: <></>}</h1>
       <p className='font-bold text-2xl pt-2 pb-4 text-slate-800'>Here are the latest posts:</p>
           {postList.map((post, index) => {
             return (
