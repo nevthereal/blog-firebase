@@ -21,7 +21,7 @@ const Home = ({ auth }) => {
   }
   
   useEffect(() => {
-    const q = query(collection(db, 'posts'), orderBy('time'))
+    const q = query(collection(db, 'posts'), orderBy('time', 'desc'))
     const unsubscribe = onSnapshot(q, (querySnapshot) =>{
       let postsArr = []
       querySnapshot.forEach((doc) => {

@@ -23,9 +23,9 @@ const Account = ({ auth, handleSignIn, handleSignOut }) => {
 
   useEffect(() => {
     if(user){
-      const userName = user.displayName
+      const userName = user.email
       const getPost = async () => {
-        const q = query(postRef, where("author", "==", userName));
+        const q = query(postRef, where("author_email", "==", userName));
         const data = await getDocs(q)
     
         setPosts(data.docs.map((doc) => ({
@@ -34,7 +34,7 @@ const Account = ({ auth, handleSignIn, handleSignOut }) => {
         })));
       };
       getPost();
-  }}, []);  
+  }}, []);
 
   return (
     <div className='text-center p-4'>
