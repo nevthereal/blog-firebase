@@ -47,7 +47,7 @@ const Account = ({ auth, handleSignIn, handleSignOut }) => {
         <div className='m-4'>
           <p>Your Name: <span className={style.info}>{user.displayName}</span></p>
           <p>Your Email: <span className={style.info}>{user.email}</span></p>
-          <p>Your Posts: {loading ? <></> : user ? <span className={style.info}>{posts.length}</span> : <></>}</p>
+          <p>Your Posts: <span className={style.info}>{posts.length}</span></p>
         </div>
         <button onClick={handleSignOut} className={style.button}>Sign Out</button>
       </div>
