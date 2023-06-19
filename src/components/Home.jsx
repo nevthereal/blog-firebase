@@ -16,6 +16,8 @@ const Home = ({ auth }) => {
 
   if(hour < 12) {
     dayTime = "Morning"
+  } else if(hour < 17) {
+    dayTime = "Afternoon"
   } else {
     dayTime = "Evening"
   }
