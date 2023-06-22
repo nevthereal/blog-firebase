@@ -22,6 +22,7 @@ const Account = ({ auth, handleSignIn, handleSignOut }) => {
   const postRef = collection(db, "posts")
 
   useEffect(() => {
+
     if(user){
       const userName = user.email
       const getPost = async () => {
@@ -34,7 +35,8 @@ const Account = ({ auth, handleSignIn, handleSignOut }) => {
         })));
       };
       getPost();
-  }}, []);
+
+  }}, [user]);
 
   return (
     <div className='text-center p-4'>
