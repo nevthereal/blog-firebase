@@ -42,7 +42,7 @@ const Create = ({ auth }) => {
           <p className={style.subHeading}>Title:</p>
           <input required type="text" className={style.input} onChange={(e) => {setTitle(e.target.value)}} />
           <p className={style.subHeading}>Post:</p>
-          <textarea required className={style.tA} rows={20} cols={80} onChange={(e) => {setContent(e.target.value)}} />
+          <textarea required className={style.tA} rows={10} cols={80} onChange={(e) => {setContent(e.target.value)}} />
           <button className={style.button}>Post!</button>
         </form>
       </div>}
