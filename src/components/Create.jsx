@@ -21,7 +21,7 @@ const Create = ({ auth }) => {
   let navigate = useNavigate()
 
   const createPost = async (e) => {
-    const confirmCreate = window.confirm("Do you want to create this post? You won't be able to edit it afterwards.")
+    const confirmCreate = window.confirm("Are you sure you want to create this post? You won't be able to edit the post afterwards.")
     if(confirmCreate) {
       try {
         e.preventDefault(e)
@@ -42,7 +42,7 @@ const Create = ({ auth }) => {
   return (
     <div className='p-4 flex justify-center'>
       {loading ? <div className='italic'>Checking if user is signed in ...</div> : !user ? <div>Please <a href="/account" className='font-bold'>log in</a> to create a post</div> : 
-      <div className='text-left bg-slate-300 m-6 p-4 rounded-2xl'>
+      <div className='text-left bg-slate-300 my-10 mx-4 p-4 rounded-2xl'>
         <h1 className={style.heading}>Create Post:</h1>
         <form onSubmit={createPost}>
           <p className={style.subHeading}>Title:</p>

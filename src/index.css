@@ -5,3 +5,7 @@
 a{
     @apply text-blue-500 underline
 }
+
+li {
+    @apply list-disc list-inside
+}
