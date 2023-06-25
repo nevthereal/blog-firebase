@@ -28,7 +28,7 @@ const Post = ({ title, pfp, author, content, time, email, id, auth }) => {
         <div className="flex items-center mb-4">
           <img src={pfp} alt="" className="h-7 rounded-full mr-2" />
           <p className="text-slate-700 text-lg">
-            {author} {email === 'neville.brem@gmail.com' ? <span>(admin)</span> : null}
+            {author} {email === 'neville.brem@gmail.com' ? <span className='italic'>(admin)</span> : null}
           </p>
         </div>
         <p className="text-gray-800" dangerouslySetInnerHTML={{ __html: content }}></p>
