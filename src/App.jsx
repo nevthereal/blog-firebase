@@ -19,7 +19,7 @@ function App() {
         signOut(auth).then(() => {
         }).catch(() => {
         });      
-    }) 
+    })
 
   return (
     <>
