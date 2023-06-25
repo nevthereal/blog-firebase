@@ -39,7 +39,7 @@ const Home = ({ auth }) => {
       <p className='font-bold text-2xl pt-2 pb-4 text-slate-800'>Here are the latest posts:</p>
           {postList.map((post, index) => {
             return (
-            <Post key={index} title={post.title} pfp={post.pfp} author={post.author} content={post.content} time={post.time.toDate().toLocaleString()} />
+            <Post key={index} title={post.title} pfp={post.pfp} author={post.author} content={post.content} time={post.time.toDate().toLocaleString()} email={post.author_email} />
             )
           })}
     </div>
