@@ -35,13 +35,15 @@ const Home = ({ auth }) => {
   }, [])
   return (
     <div className='my-10 mx-4'>
-      <h1 className='font-bold text-slate-900 text-5xl'>Good {dayTime}{loading ? <></> : user ? <span>, {user.displayName}</span>: <></>}</h1>
-      <p className='font-bold text-2xl pt-2 pb-4 text-slate-800'>Here are the latest posts:</p>
-          {postList.map((post, index) => {
-            return (
-            <Post key={index} title={post.title} pfp={post.pfp} author={post.author} content={post.content} time={post.time.toDate().toLocaleString()} email={post.author_email} id={post.id} auth={auth} />
-            )
-          })}
+      <div className='mx-auto w-full sm:max-w-[60%]'>
+        <h1 className='font-bold text-slate-900 text-5xl'>Good {dayTime}{loading ? <></> : user ? <span>, {user.displayName}</span>: <></>}</h1>
+        <p className='font-bold text-2xl pt-2 pb-4 text-slate-800'>Here are the latest posts:</p>
+            {postList.map((post, index) => {
+              return (
+              <Post key={index} title={post.title} pfp={post.pfp} author={post.author} content={post.content} time={post.time.toDate().toLocaleString()} email={post.author_email} id={post.id} auth={auth} />
+              )
+            })}
+      </div>
     </div>
   )
 }

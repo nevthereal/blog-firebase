@@ -40,15 +40,15 @@ const Create = ({ auth }) => {
   }
 
   return (
-    <div className='p-4 flex justify-center'>
+    <div className='my-10 mx-4 flex justify-center'>
       {loading ? <div className='italic'>Checking if user is signed in ...</div> : !user ? <div>Please <a href="/account" className='font-bold'>log in</a> to create a post</div> : 
-      <div className='text-left bg-slate-300 my-10 mx-4 p-4 rounded-2xl'>
+      <div className='text-left bg-slate-200 p-4 rounded-xl w-full sm:max-w-[60%] border border-slate-300 shadow-lg'>
         <h1 className={style.heading}>Create Post:</h1>
         <form onSubmit={createPost}>
           <p className={style.subHeading}>Title:</p>
           <input required type="text" className={style.input} onChange={(e) => {setTitle(e.target.value)}} />
           <p className={style.subHeading}>Post:</p>
-          <textarea required className={style.tA} rows={10} cols={80} onChange={(e) => {setContent(e.target.value)}} />
+          <textarea required className={style.tA} rows={10} onChange={(e) => {setContent(e.target.value)}} />
           <button className={style.button}>Post!</button>
         </form>
       </div>}
