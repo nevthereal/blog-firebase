@@ -9,8 +9,16 @@ const Post = ({ title, pfp, author, content, time, email, id, auth }) => {
   const [user, loading] = useAuthState(auth);
 
   const deletePost = async (postId) => {
-    await deleteDoc(doc(db, 'posts', postId));
+    const confirmDelete = window.confirm("Are you sure you want to delete this post? This action is irreversible.");
+    if (confirmDelete) {
+      try {
+        await deleteDoc(doc(db, 'posts', postId));
+      } catch (error) {
+        alert("Post couldn't be deleted")
+      }
+    }
   };
+  
 
   return (
     <div className="bg-slate-200 p-4 my-4 rounded-xl border border-slate-300 shadow-lg flex justify-between">

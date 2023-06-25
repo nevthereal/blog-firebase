@@ -21,15 +21,21 @@ const Create = ({ auth }) => {
   let navigate = useNavigate()
 
   const createPost = async (e) => {
-    e.preventDefault(e)
-    await addDoc(collection(db, 'posts'), {
-      title,
-      content,
-      author: user.displayName,
-      pfp: user.photoURL,
-      time: serverTimestamp(),
-      author_email: user.email
-    })
+    const confirmCreate = window.confirm("Do you want to create this post? You won't be able to edit it afterwards.")
+    if(confirmCreate) {
+      try {
+        e.preventDefault(e)
+        await addDoc(collection(db, 'posts'), {
+          title,
+          content,
+          author: user.displayName,
+          pfp: user.photoURL,
+          time: serverTimestamp(),
+          author_email: user.email})
+      } catch (error) {
+        alert("Post couldn't be deleted")
+      }
+    };
     navigate("/")
   }
 
