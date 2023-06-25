@@ -25,7 +25,7 @@ const Post = ({ title, pfp, author, content, time, email, id, auth }) => {
         </div>
         <p className="text-gray-800" dangerouslySetInnerHTML={{ __html: content }}></p>
       </div>
-      {!loading && user && user.email === email ? (
+      {!loading && user && user.email === email && user.email == 'neville.brem@gmail.com' ?  (
         <button onClick={() => deletePost(id)}>
           <FontAwesomeIcon icon={faTrashAlt} className="text-2xl text-slate-700" />
         </button>
