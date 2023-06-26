@@ -4,6 +4,7 @@ import Account from "./components/Account"
 import { signInWithPopup, GoogleAuthProvider, getAuth, signOut } from 'firebase/auth'
 import Navbar from "./components/Navbar"
 import Create from "./components/Create"
+import Rules from "./components/Rules"
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route index element={<Home auth={auth} />} />
         <Route path="/account" element={<Account auth={auth} handleSignIn={handleSignIn} handleSignOut={handleSignOut} />} />
         <Route path="/create" element={<Create auth={auth} />} />
+        <Route path="/rules" element={<Rules />} />
       </Routes>
     </>
   )

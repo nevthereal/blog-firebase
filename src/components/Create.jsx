@@ -49,6 +49,7 @@ const Create = ({ auth }) => {
           <input required type="text" className={style.input} onChange={(e) => {setTitle(e.target.value)}} />
           <p className={style.subHeading}>Post:</p>
           <textarea required className={style.tA} rows={10} onChange={(e) => {setContent(e.target.value)}} />
+          <div className='flex gap-3'><input type="checkbox" required /><p>I have read the <a href="/rules">Rules</a></p></div>
           <button className={style.button}>Post!</button>
         </form>
       </div>}
