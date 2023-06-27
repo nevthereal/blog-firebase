@@ -1,7 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { faGoogle } from '@fortawesome/free-brands-svg-icons'
 import { useState, useEffect } from 'react'
 import { collection, getDocs, query, where } from 'firebase/firestore'
 import { db } from '../firebase'
@@ -55,7 +53,7 @@ const Account = ({ auth, handleSignIn, handleSignOut }) => {
       </div>
       :
       <div>
-        <button onClick={handleSignIn} className={style.button}>Sign in with <FontAwesomeIcon icon={faGoogle} /></button>
+        <button onClick={handleSignIn} className={style.button}>Sign in with Google</button>
       </div>
       }
     </div>
