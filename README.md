@@ -1,7 +1,8 @@
 # Neville Brem Blog App
+## About this repository
 Hey there! This is the first time I use Firebase for a real application. I want to create a cool blog. It is still work in progress though.
 
-# Technologies used:
+## Technologies used:
 - Vite
 - React
 - Firebase
